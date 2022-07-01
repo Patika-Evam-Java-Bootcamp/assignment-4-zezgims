@@ -23,16 +23,16 @@ public class JsonReader {
 	
     public List<Student> read() throws JsonSyntaxException, JsonIOException, FileNotFoundException {
 		
-	String jsonKeyName = "students";		//Json dosyasýndaki map key'i bir deðiþkene atanýr.
+	String jsonKeyName = "students";		//Json dosyasındaki map key'i bir değişkene atanır.
 	List<Student> studentList;	
-	Map<String, List<Student>> jsonMap;		//Json dosyasý türünden bir map oluþturur.
+	Map<String, List<Student>> jsonMap;		//Json dosyası türünden bir map oluşturur.
 		
-	Gson gson = new Gson();		//Json dosyasýný okumak için gson kütüphanesi kullanýldý.
+	Gson gson = new Gson();		//Json dosyasını okumak için gson kütüphanesi kullanıldı.
 		
 	Type type = new TypeToken<Map<String, List<Student>>>() {}.getType();		
-	jsonMap = gson.fromJson(new FileReader(filePath), type);		//Json dosyasý okuma iþlemini gerçekleþtirir.
+	jsonMap = gson.fromJson(new FileReader(filePath), type);		//Json dosyası okuma işlemini gerçekleştirir.
 		
-	studentList = jsonMap.get(jsonKeyName);		//Json dosyasýndaki map key'inin value'larý Student listesine atanýr.
+	studentList = jsonMap.get(jsonKeyName);		//Json dosyasındaki map key'inin value'ları Student listesine atanır.
 		
 	return studentList;
 		
